@@ -14,10 +14,23 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  name String?
-  posts Post[]
+  /**
+ * The unique identifier for the User.
+ */
+id Int @id @default(autoincrement())
+  /**
+ * The unique email address of the User.
+ */
+email String @unique
+  /**
+ * The name of the User.
+ * This field is optional.
+ */
+name String?
+  /**
+ * The posts created by the User.
+ */
+posts Post[]
 }
 
 model Post {
